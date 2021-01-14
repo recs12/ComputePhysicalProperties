@@ -66,14 +66,12 @@ let main argv =
     printfn "CenterOfGravity:"
     printfn "%A" centerOfGravity.Length
 
-    //let m = centerOfGravity |> Array.toList
+    let gravityCenter =
+        centerOfGravity
+        |> Seq.cast<double>
+        |> Seq.toArray
 
-    //let m = centerOfGravity
-    //double[] m = cetnerOfGravity.OfType<double>().ToArray();
-    //printfn "%A %A %A"  m.[0] m.[1]  m.[2]
-
-    // System.Array
-    // []
+    printfn "%A %A %A"  gravityCenter.[0] gravityCenter.[1]  gravityCenter.[2]
 
 
     SolidEdgeCommunity.OleMessageFilter.Unregister()
